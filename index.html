@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ToritoApp – Tu Libertad Legal Inmediata</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #C74634;
+      --secondary: #193348;
+      --background: linear-gradient(180deg, #0E2A39 0%, #C74634 100%);
+      --white: #fff;
+      --gray: #f4f4f4;
+      --max-width: 1200px;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--background);
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem 1rem;
+    }
+
+    header img.logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    p.subtitle {
+      font-size: 1.1rem;
+      color: #ddd;
+      max-width: 600px;
+      margin: 0.5rem auto 2rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .cta-button {
+      background-color: var(--white);
+      color: var(--secondary);
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-button img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .cta-button.android {
+      background-color: #3DDC84;
+      color: var(--white);
+    }
+
+    .cta-button.ios {
+      background-color: #000;
+      color: var(--white);
+    }
+
+    .app-preview {
+      margin-top: 4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 3rem;
+      padding: 2rem 1rem;
+    }
+
+    .app-preview img {
+      width: 280px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .app-preview img:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 25px 70px rgba(0,0,0,0.6);
+    }
+
+    @media (max-width: 768px) {
+      .app-preview {
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+      
+      .app-preview img {
+        width: 200px;
+      }
+    }
+
+    section.faq {
+      background-color: var(--gray);
+      color: #222;
+      border-radius: 20px 20px 0 0;
+      margin-top: 4rem;
+      padding: 3rem 1rem;
+      width: 100%;
+      max-width: var(--max-width);
+    }
+
+    section.faq h2 {
+      text-align: center;
+      color: var(--secondary);
+      margin-bottom: 2rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .faq-item h3 {
+      margin: 0 0 0.5rem;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .faq-item p {
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    footer {
+      background-color: var(--secondary);
+      color: #aaa;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      .app-preview img { width: 180px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="assets/logo.jpg" alt="Logo ToritoApp" class="logo"/>
+    <h1>ToritoApp</h1>
+    <p class="subtitle">Solicita tu juicio de amparo al instante y obtén tu libertad legal desde el celular</p>
+    <div class="cta-buttons">
+      <button class="cta-button android" onclick="descargarApp('android')">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5506 0 .9989.4482.9989.9993s-.4483.9997-.9989.9997m-11.046 0c-.5506 0-.9993-.4486-.9993-.9997s.4486-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993s-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1349 1.0989L4.8429 5.4467a.4161.4161 0 00-.5676-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.6889 11.186.8535 12.2174.8535 13.7408v1.5838c0 .5668.4603 1.0271 1.0271 1.0271h20.239c.5668 0 1.0271-.4603 1.0271-1.0271v-1.5838c0-1.5234-1.8354-2.5548-5.1895-3.4194"/>
+        </svg>
+        Android
+      </button>
+      <button class="cta-button ios" onclick="descargarApp('ios')">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+        </svg>
+        iOS
+      </button>
+    </div>
+  </header>
+
+  <div class="app-preview">
+    <img src="assets/1.png" alt="Vista previa de la app ToritoApp - Pantalla principal"/>
+    <img src="assets/2.png" alt="Vista previa de la app ToritoApp - Funcionalidades"/>
+  </div>
+
+  <section class="faq">
+    <h2>Preguntas Frecuentes</h2>
+    
+    <div class="faq-item">
+      <h3>¿Qué objetivo tiene la aplicación?</h3>
+      <p>Te libera si eres detenido en un operativo de alcoholímetro, mediante un juicio de amparo.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>¿Cómo funciona?</h3>
+      <p>Activa el botón de solicitud antes de ser detenido. Si no cancelas en 15 minutos, se tramita automáticamente el amparo y obtienes tu libertad.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>¿Qué incluye el servicio?</h3>
+      <p>Tramitación digital inmediata del juicio de amparo, acuse de recibo, y obtención de libertad.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>¿Dónde aplica?</h3>
+      <p>En zonas metropolitanas de ciudades con operativo de alcoholimetría activo.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>¿Puedo solicitar devolución si cancelo?</h3>
+      <p>No, pero puedes cancelar dentro del contador de 15 minutos antes de que se realice el trámite.</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 ToritoApp. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    function descargarApp(platform) {
+      if (platform === 'android') {
+        window.location.href = "https://play.google.com/store/apps/details?id=com.toritoapp"; // reemplazar con enlace real de Google Play
+      } else if (platform === 'ios') {
+        window.location.href = "https://apps.apple.com/app/toritoapp"; // reemplazar con enlace real de App Store
+      }
+    }
+  </script>
+</body>
+</html>
