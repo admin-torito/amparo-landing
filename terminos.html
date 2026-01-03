@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Términos y Condiciones – ToritoApp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #3B82F6;
+      --primary-dark: #2563EB;
+      --orange: #C74634;
+      --gray-light: #F3F4F6;
+      --gray-medium: #9CA3AF;
+      --gray-dark: #374151;
+      --white: #FFFFFF;
+      --success: #10B981;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background-color: var(--white);
+      color: var(--gray-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--orange) 100%);
+      color: var(--white);
+      padding: 2rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 400px;
+      height: 400px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo-link {
+      display: inline-block;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    .logo-link:hover {
+      transform: scale(1.05);
+    }
+
+    header img.logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      opacity: 0.95;
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 400;
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    /* Content */
+    .content {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .content h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gray-dark);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .content h2:first-child {
+      margin-top: 0;
+    }
+
+    .content h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--gray-dark);
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .content p {
+      font-size: 1rem;
+      color: var(--gray-dark);
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    .content ul, .content ol {
+      margin-left: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .content li {
+      font-size: 1rem;
+      color: var(--gray-dark);
+      margin-bottom: 0.5rem;
+      line-height: 1.8;
+    }
+
+    .last-updated {
+      font-size: 0.9rem;
+      color: var(--gray-medium);
+      font-style: italic;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--gray-light);
+    }
+
+    .content a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    .content a:hover {
+      color: var(--primary-dark);
+      border-bottom-color: var(--primary);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--gray-dark);
+      color: #9CA3AF;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #9CA3AF;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    footer a:hover {
+      color: var(--white);
+      border-bottom-color: var(--white);
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      .subtitle { font-size: 1rem; }
+      .content h2 {
+        font-size: 1.5rem;
+      }
+      .content h3 {
+        font-size: 1.25rem;
+      }
+      .container {
+        padding: 2rem 1rem;
+      }
+      .content {
+        padding: 1.5rem;
+      }
+      .footer-links {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <a href="index.html" class="logo-link">
+        <img src="assets/logo.jpg" alt="Logo ToritoApp" class="logo"/>
+      </a>
+      <h1>Términos y Condiciones</h1>
+      <p class="subtitle">ToritoApp</p>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="content">
+      <p class="last-updated">Última actualización: 3 de enero de 2026</p>
+
+      <p>Bienvenido a <strong>ToritoApp</strong>, propiedad de <strong>ToritoApp SAPI de CV</strong>. Al utilizar esta aplicación móvil, aceptas los siguientes términos y condiciones de uso. Si no estás de acuerdo con ellos, te pedimos que no utilices la plataforma.</p>
+
+      <h2>1. Registro y veracidad de la información</h2>
+      <p>Al registrarte en ToritoApp, te comprometes a proporcionar información verdadera, completa y actualizada. Es <strong>responsabilidad exclusiva del usuario proporcionar su nombre completo tal como aparece en su identificación oficial</strong>, ya que dicha información será usada en documentos legales relacionados con el servicio.</p>
+
+      <h2>2. Solicitud del servicio</h2>
+      <p>El servicio consiste en la generación de un documento legal de amparo, que será activado únicamente si el usuario no cancela la solicitud dentro del plazo establecido.</p>
+      <p><strong>Una vez solicitado el servicio, el usuario cuenta con 15 minutos para cancelarlo sin costo.</strong> Si no se realiza dicha cancelación dentro del tiempo indicado, se procederá al <strong>cobro automático</strong> y a la emisión del documento legal correspondiente, el cual será enviado al despacho jurídico afiliado para su seguimiento.</p>
+
+      <h2>3. Uso adecuado</h2>
+      <p>El usuario se compromete a utilizar la plataforma de manera ética, legal y bajo su propio riesgo. Queda estrictamente prohibido hacer mal uso del servicio, proporcionar datos falsos o suplantar la identidad de terceros.</p>
+
+      <h2>4. Tarifas y pagos</h2>
+      <p>El costo del servicio será mostrado claramente antes de confirmar cualquier solicitud. El usuario acepta el cargo correspondiente al momento de confirmar la operación, a menos que cancele dentro del plazo de gracia de 15 minutos.</p>
+
+      <h2>5. Limitación de responsabilidad</h2>
+      <p>ToritoApp no se hace responsable por errores derivados de datos incorrectos proporcionados por el usuario, ni por el uso indebido de los documentos generados. ToritoApp actúa como intermediario tecnológico entre el usuario y los despachos jurídicos asociados.</p>
+
+      <h2>6. Cambios en los términos</h2>
+      <p>ToritoApp se reserva el derecho de modificar estos términos en cualquier momento. Las actualizaciones serán publicadas en <a href="https://torito.app/terminos.html">https://torito.app/terminos.html</a>. El uso continuo de la plataforma constituye aceptación de dichos cambios.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div>© 2026 ToritoApp. Todos los derechos reservados.</div>
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="terminos.html">Términos y Condiciones</a>
+        <a href="privacidad.html">Aviso de Privacidad</a>
+        <a href="https://admin.torito.app/" target="_blank" rel="noopener noreferrer">Panel de Administración</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+
