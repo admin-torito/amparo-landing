@@ -174,18 +174,79 @@
       text-align: justify;
     }
 
+    .features-carousel {
+      position: relative;
+      overflow: hidden;
+      margin-top: 2.5rem;
+    }
+
+    .features-track {
+      display: flex;
+      transition: transform 0.6s ease;
+      will-change: transform;
+    }
+
+    .feature-slide {
+      min-width: 100%;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+    }
+
+    .carousel-btn {
+      border: 1px solid #e5e7eb;
+      background: var(--white);
+      color: var(--gray-dark);
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .carousel-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .carousel-dots {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin: 0 0.25rem;
+    }
+
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #d1d5db;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .carousel-dot.active {
+      background: var(--primary);
+      width: 22px;
+      border-radius: 999px;
+    }
+
     /* Features Section */
     .features {
       background-color: var(--gray-light);
       padding: 5rem 0;
     }
-
-    .features-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin-top: 3rem;
-}
 
     .feature-card {
       background: var(--white);
@@ -193,6 +254,9 @@
       border-radius: 16px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
     }
 
     .feature-card:hover {
@@ -222,6 +286,7 @@
       font-weight: 600;
       margin-bottom: 0.5rem;
       color: var(--gray-dark);
+      text-align: center;
     }
 
     .feature-card p {
@@ -422,6 +487,11 @@
     }
 
     /* Responsive */
+    @media (max-width: 1024px) {
+      .feature-card {
+        max-width: 640px;
+      }
+    }
     @media (max-width: 768px) {
       h1 { font-size: 2rem; }
       .subtitle { font-size: 1rem; }
@@ -431,8 +501,8 @@
       .app-images img {
         width: 250px;
       }
-      .features-grid {
-        grid-template-columns: 1fr;
+      .feature-card {
+        max-width: 100%;
       }
       .steps {
         grid-template-columns: 1fr;
@@ -477,8 +547,10 @@
   <section class="features">
     <div class="container">
       <h2 style="text-align: center; font-size: 2.5rem; font-weight: 700; color: var(--gray-dark); margin-bottom: 1rem; letter-spacing: -0.02em;">¿Por qué elegir ToritoApp?</h2>
-      <div class="features-grid">
-        <div class="feature-card fade-in">
+      <div class="features-carousel" data-features-carousel>
+        <div class="features-track">
+          <div class="feature-slide">
+            <div class="feature-card fade-in">
           <div class="feature-icon">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
@@ -487,8 +559,10 @@
           <h3>Preventivo y Profesional</h3>
           <p>Solicita tu amparo previo a realizar la prueba de alcoholemia y espera para verificar si pasas la misma. En caso de no ser detenido, podrás cancelarlo, ya que se cuenta con 15 minutos para hacerlo, en caso contrario, deja correr el plazo para que se genere de forma automática tu solicitud de amparo y puedas obtener tu libertad en el menor tiempo posible.</p>
         </div>
+          </div>
 
-        <div class="feature-card fade-in">
+          <div class="feature-slide">
+            <div class="feature-card fade-in">
           <div class="feature-icon">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
@@ -497,8 +571,22 @@
           <h3>Inmediato y Automático</h3>
           <p>Una vez transcurrido el lapso de 15 minutos, se notificará a nuestro despacho de abogados y de manera inmediata gestionarán tu juicio de amparo ante las autoridades judiciales federales para obtener tu libertad.</p>
         </div>
+          </div>
 
-        <div class="feature-card fade-in">
+          <div class="feature-slide">
+            <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
+          <h3>Auxilia a amigos y Familiares</h3>
+          <p>A través de nuestra app, podrás promover un juicio de amparo a nombre de cualquier persona para que sea liberada, evitando cobros excesivos por gestores externos.</p>
+        </div>
+          </div>
+
+          <div class="feature-slide">
+            <div class="feature-card fade-in">
           <div class="feature-icon">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
@@ -507,8 +595,10 @@
           <h3>Evita cobros excesivos de gestores</h3>
           <p>Con nuestra tarifa única, pagarás la mitad de lo que cobran aquellos gestores que laboran de manera individual, evitando cobros excesivos y variables.</p>
         </div>
+          </div>
 
-        <div class="feature-card fade-in">
+          <div class="feature-slide">
+            <div class="feature-card fade-in">
           <div class="feature-icon">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -516,6 +606,13 @@
           </div>
           <h3>Obtén tu libertad para continuar con tus compromisos</h3>
           <p>En el menor tiempo posible, se tramitará un juicio de amparo para que puedas continuar con tus compromisos laborales o personales.</p>
+        </div>
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-btn" type="button" data-features-prev aria-label="Anterior">‹</button>
+          <div class="carousel-dots" role="tablist" aria-label="Carrusel de beneficios"></div>
+          <button class="carousel-btn" type="button" data-features-next aria-label="Siguiente">›</button>
         </div>
       </div>
     </div>
@@ -613,6 +710,54 @@
       } else if (platform === 'ios') {
         window.location.href = "https://apps.apple.com/app/toritoapp"; // reemplazar con enlace real de App Store
       }
+    }
+
+    // Features carousel
+    const features = document.querySelector('[data-features-carousel]');
+    if (features) {
+      const track = features.querySelector('.features-track');
+      const slides = Array.from(features.querySelectorAll('.feature-slide'));
+      const dotsContainer = features.querySelector('.carousel-dots');
+      const prevBtn = features.querySelector('[data-features-prev]');
+      const nextBtn = features.querySelector('[data-features-next]');
+      let index = 0;
+      let timer = null;
+
+      const dots = slides.map((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot';
+        dot.type = 'button';
+        dot.setAttribute('aria-label', `Ir al slide ${i + 1}`);
+        dot.addEventListener('click', () => {
+          update(i);
+          resetTimer();
+        });
+        dotsContainer?.appendChild(dot);
+        return dot;
+      });
+
+      const update = (nextIndex) => {
+        index = (nextIndex + slides.length) % slides.length;
+        track.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+      };
+
+      const resetTimer = () => {
+        if (timer) clearInterval(timer);
+        timer = setInterval(() => update(index + 1), 6000);
+      };
+
+      prevBtn?.addEventListener('click', () => {
+        update(index - 1);
+        resetTimer();
+      });
+      nextBtn?.addEventListener('click', () => {
+        update(index + 1);
+        resetTimer();
+      });
+
+      update(0);
+      resetTimer();
     }
 
     // Animación de entrada al hacer scroll
